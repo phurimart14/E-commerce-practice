@@ -11,7 +11,9 @@
       "Bash(npx shadcn@latest init --yes --defaults)",
       "Bash(npx shadcn@latest add badge card input label select table dialog)",
       "Bash(npx prisma *)",
-      "Bash(npx husky *)"
+      "Bash(npx husky *)",
+      "Bash(npm run *)",
+      "Bash(git merge *)"
     ]
   }
 }
