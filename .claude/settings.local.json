@@ -5,7 +5,13 @@
       "Bash(npx create-next-app@latest ecommerce-app --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --yes)",
       "Bash(cp -r D:/Codeing/claude/project/ecommerce-app/. D:/Codeing/claude/project/ecommerce/)",
       "Bash(rm -rf D:/Codeing/claude/project/ecommerce-app)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git checkout *)",
+      "Bash(npm install *)",
+      "Bash(npx shadcn@latest init --yes --defaults)",
+      "Bash(npx shadcn@latest add badge card input label select table dialog)",
+      "Bash(npx prisma *)",
+      "Bash(npx husky *)"
     ]
   }
 }
