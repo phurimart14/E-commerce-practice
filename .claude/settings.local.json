@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(npx create-next-app@latest ecommerce-app --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(cp -r D:/Codeing/claude/project/ecommerce-app/. D:/Codeing/claude/project/ecommerce/)",
+      "Bash(rm -rf D:/Codeing/claude/project/ecommerce-app)",
+      "Bash(git commit *)"
+    ]
+  }
+}
