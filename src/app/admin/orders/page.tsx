@@ -1,6 +1,11 @@
 import { prisma } from "@/lib/prisma";
 import { formatPrice } from "@/lib/utils";
 import OrderStatusSelect from "@/components/admin/OrderStatusSelect";
+import type { Order, OrderItem, Product } from "@/types";
+
+type OrderWithItems = Order & {
+  items: (OrderItem & { product: Product })[];
+};
 
 export const metadata = { title: "คำสั่งซื้อ — Admin" };
 
@@ -23,7 +28,7 @@ export default async function AdminOrdersPage() {
         </div>
       ) : (
         <div className="space-y-4">
-          {orders.map((order) => (
+          {orders.map((order: OrderWithItems) => (
             <div key={order.id} className="rounded-xl border bg-white p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
