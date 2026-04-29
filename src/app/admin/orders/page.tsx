@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { formatPrice } from "@/lib/utils";
 import OrderStatusSelect from "@/components/admin/OrderStatusSelect";
+import DeleteOrderButton from "@/components/admin/DeleteOrderButton";
 import type { Order, OrderItem, Product } from "@/types";
 
 type OrderWithItems = Order & {
@@ -40,10 +41,13 @@ export default async function AdminOrdersPage() {
                   </p>
                 </div>
                 <div className="flex flex-col items-end gap-2">
-                  <OrderStatusSelect
-                    orderId={order.id}
-                    currentStatus={order.status}
-                  />
+                  <div className="flex items-center gap-2">
+                    <OrderStatusSelect
+                      orderId={order.id}
+                      currentStatus={order.status}
+                    />
+                    <DeleteOrderButton id={order.id} />
+                  </div>
                   <p className="text-lg font-bold">
                     {formatPrice(Number(order.totalAmount))}
                   </p>
