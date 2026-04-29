@@ -15,7 +15,8 @@
       "Bash(npm run *)",
       "Bash(git merge *)",
       "Bash(npx next *)",
-      "Bash(curl -s http://localhost:3000/)"
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/products/cmojx702k0001vkx041feccr6)"
     ]
   }
 }
