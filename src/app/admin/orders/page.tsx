@@ -64,7 +64,7 @@ export default async function AdminOrdersPage() {
                   รายการสินค้า
                 </p>
                 <div className="space-y-1">
-                  {order.items.map((item) => (
+                  {order.items.map((item: OrderWithItems["items"][number]) => (
                     <div key={item.id} className="flex justify-between text-sm">
                       <span className="text-gray-600">
                         {item.product.name} × {item.quantity}
