@@ -2,6 +2,8 @@
 
 Mini e-commerce สร้างด้วย Next.js 16 + Prisma + Neon สำหรับฝึก fullstack development
 
+🔗 **Live Demo:** [https://e-commerce-practice-mu.vercel.app](https://e-commerce-practice-mu.vercel.app)
+
 ## Tech Stack
 
 - **Framework:** Next.js 16 (App Router)
@@ -30,8 +32,8 @@ Mini e-commerce สร้างด้วย Next.js 16 + Prisma + Neon สำห
 ### 1. Clone และติดตั้ง
 
 ```bash
-git clone <repo-url>
-cd ecommerce
+git clone https://github.com/phurimart14/E-commerce-practice.git
+cd E-commerce-practice
 npm install
 ```
 
@@ -106,10 +108,3 @@ src/
 └── types/
     └── index.ts         # Shared types
 ```
-
-## Deploy to Vercel
-
-1. Push code ไป GitHub
-2. Import project ใน [Vercel](https://vercel.com)
-3. เพิ่ม Environment Variables ใน Vercel dashboard
-4. Deploy!
