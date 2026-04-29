@@ -9,8 +9,17 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Mini Shop — ร้านค้าออนไลน์",
+  title: {
+    default: "Mini Shop — ร้านค้าออนไลน์",
+    template: "%s | Mini Shop",
+  },
   description: "ร้านค้าออนไลน์ที่รวมสินค้าหลากหลาย ราคาดี คุณภาพเยี่ยม",
+  openGraph: {
+    title: "Mini Shop",
+    description: "ร้านค้าออนไลน์ที่รวมสินค้าหลากหลาย ราคาดี คุณภาพเยี่ยม",
+    locale: "th_TH",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

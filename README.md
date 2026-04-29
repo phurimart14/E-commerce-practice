@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mini Shop — Fullstack E-Commerce Practice Project
+
+Mini e-commerce สร้างด้วย Next.js 16 + Prisma + Neon สำหรับฝึก fullstack development
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript (strict)
+- **Styling:** Tailwind CSS + shadcn/ui
+- **ORM:** Prisma v7 + PostgreSQL (Neon)
+- **Auth:** NextAuth.js v5 (Credentials)
+- **State:** Zustand (cart with localStorage persist)
+- **Forms:** React Hook Form + Zod
+- **Deploy:** Vercel + Neon
+
+## Features
+
+| Feature                        | Route             |
+| ------------------------------ | ----------------- |
+| Product list (search + filter) | `/`               |
+| Product detail                 | `/products/[id]`  |
+| Shopping cart                  | `/cart`           |
+| Checkout (mock)                | `/checkout`       |
+| Admin login                    | `/admin/login`    |
+| Admin product CRUD             | `/admin/products` |
+| Admin order management         | `/admin/orders`   |
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone และติดตั้ง
+
+```bash
+git clone <repo-url>
+cd ecommerce
+npm install
+```
+
+### 2. ตั้งค่า Environment Variables
+
+```bash
+cp .env.example .env.local
+```
+
+แก้ไข `.env.local`:
+
+```env
+DATABASE_URL="postgresql://user:pass@ep-xxx.neon.tech/neondb?sslmode=require"
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key"
+```
+
+### 3. Setup Database
+
+```bash
+npm run db:migrate   # สร้าง tables
+npm run db:seed      # seed ข้อมูลตัวอย่าง (16 สินค้า + admin)
+```
+
+### 4. รัน Dev Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+เปิด [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Admin Access
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- URL: `/admin/login`
+- Email: `admin@example.com`
+- Password: `admin123`
 
-## Learn More
+> ⚠️ เปลี่ยน credentials ก่อน deploy ขึ้น production
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run dev          # Development server
+npm run build        # Production build
+npm run db:migrate   # Run migrations
+npm run db:seed      # Seed database
+npm run db:studio    # Open Prisma Studio
+npm run format       # Format code
+npm run lint         # Lint code
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/
+│   ├── (shop)/          # Customer routes
+│   ├── admin/           # Admin routes (protected)
+│   └── api/             # Route handlers
+├── components/
+│   ├── shop/            # Customer components
+│   ├── admin/           # Admin components
+│   └── shared/          # Shared components
+├── lib/
+│   ├── actions/         # Server Actions
+│   ├── validations/     # Zod schemas
+│   ├── auth.ts          # NextAuth config
+│   └── prisma.ts        # Prisma client
+├── store/
+│   └── cartStore.ts     # Zustand cart
+└── types/
+    └── index.ts         # Shared types
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy to Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push code ไป GitHub
+2. Import project ใน [Vercel](https://vercel.com)
+3. เพิ่ม Environment Variables ใน Vercel dashboard
+4. Deploy!
